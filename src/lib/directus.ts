@@ -49,9 +49,9 @@ async function directusFetch<T>(
       'Content-Type': 'application/json',
     },
     // Current: no caching for development
-    cache: 'no-store',
+    // cache: 'no-store',
     // Future options for caching:
-    // next: { revalidate: 600 }, // Revalidate every 10 minutes
+    next: { revalidate: 30 }, // Revalidate every 10 minutes
     // next: { tags: ['release-notes'] }, // For on-demand revalidation
   });
 

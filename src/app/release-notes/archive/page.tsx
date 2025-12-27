@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { fetchArchive } from '@/lib/directus';
 import { Navigation, ArchiveList } from '@/components/release-notes';
-
+export const revalidate = 10;
 /**
  * Archive Page - Server Component
  * 
