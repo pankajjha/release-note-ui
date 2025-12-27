@@ -52,7 +52,7 @@ export default async function ReleaseNotePage({ params, searchParams }: PageProp
         <HeaderHero
           issueNumber={issueNumber}
           appVersion="v1.7.0"
-          publishedAt={release.published_at}
+          publishedAt={release.date_created}
           title={release.title || 'Ambak Weekly'}
           summary={release.summary}
         />

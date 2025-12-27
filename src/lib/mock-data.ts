@@ -13,7 +13,7 @@ export const mockRelease: ParsedReleaseNote = {
   title: 'Ambak Weekly',
   summary: "At Ambak, we ship because you ask for it. But sometimes the team spots an opportunity for a small fix that unlocks big improvements in your workflow. Here's what we built this week.",
   status: 'published',
-  published_at: new Date().toISOString(),
+  date_created: new Date().toISOString(),
   sections: [
     {
       id: 'section-1',

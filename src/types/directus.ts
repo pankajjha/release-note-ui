@@ -34,7 +34,7 @@ export interface ReleaseNote {
   title: string;
   summary: string;
   status: 'draft' | 'published' | 'archived';
-  published_at: string;
+  date_created: string;
   sections: ReleaseNoteSection[];
 }
 

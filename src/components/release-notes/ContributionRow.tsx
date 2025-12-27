@@ -49,9 +49,10 @@ export function ContributionRow({ section, index, showNumber = true }: Contribut
         )}
         
         {/* Description */}
-        <p className="text-[17px] text-[#4A4A4A] mb-6 leading-relaxed">
-          <div dangerouslySetInnerHTML={{ __html: section.description }} />
-        </p>
+        <div 
+          className="text-[17px] text-[#4A4A4A] mb-6 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: section.description }} 
+        />
         
         {/* CTA Link */}
         {section.cta_link && (
