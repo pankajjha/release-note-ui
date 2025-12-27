@@ -46,7 +46,7 @@ export interface ReleaseNoteSettings {
 export interface ArchiveItem {
   period_key: string;
   title: string;
-  published_at: string;
+  date_created: string;
   status: 'published' | 'archived';
 }
 

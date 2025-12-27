@@ -87,12 +87,12 @@ export const mockRelease: ParsedReleaseNote = {
 };
 
 export const mockArchive: ArchiveItem[] = [
-  { period_key: '2025-W52', title: 'Issue 003', published_at: '2025-12-27T10:30:00Z', status: 'published' },
-  { period_key: '2025-W51', title: 'Issue 002', published_at: '2025-12-20T10:30:00Z', status: 'archived' },
-  { period_key: '2025-W50', title: 'Issue 001', published_at: '2025-12-13T10:30:00Z', status: 'archived' },
-  { period_key: '2025-nov', title: 'November 2025', published_at: '2025-11-30T10:30:00Z', status: 'archived' },
-  { period_key: '2025-oct', title: 'October 2025', published_at: '2025-10-31T10:30:00Z', status: 'archived' },
-  { period_key: '2025-sep', title: 'September 2025', published_at: '2025-09-30T10:30:00Z', status: 'archived' },
-  { period_key: '2025-aug', title: 'August 2025', published_at: '2025-08-31T10:30:00Z', status: 'archived' },
+  { period_key: '2025-W52', title: 'Issue 003', date_created: '2025-12-27T10:30:00Z', status: 'published' },
+  { period_key: '2025-W51', title: 'Issue 002', date_created: '2025-12-20T10:30:00Z', status: 'archived' },
+  { period_key: '2025-W50', title: 'Issue 001', date_created: '2025-12-13T10:30:00Z', status: 'archived' },
+  { period_key: '2025-nov', title: 'November 2025', date_created: '2025-11-30T10:30:00Z', status: 'archived' },
+  { period_key: '2025-oct', title: 'October 2025', date_created: '2025-10-31T10:30:00Z', status: 'archived' },
+  { period_key: '2025-sep', title: 'September 2025', date_created: '2025-09-30T10:30:00Z', status: 'archived' },
+  { period_key: '2025-aug', title: 'August 2025', date_created: '2025-08-31T10:30:00Z', status: 'archived' },
 ];
 

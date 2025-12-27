@@ -11,7 +11,7 @@ export function ArchiveList({ releases, showTitle = true }: ArchiveListProps) {
   const groupedByMonth: Record<string, ArchiveItem[]> = {};
   
   releases.forEach((release) => {
-    const date = new Date(release.published_at);
+    const date = new Date(release.date_created);
     const monthKey = date.toLocaleDateString('en-US', { 
       month: 'long', 
       year: 'numeric' 
@@ -51,7 +51,7 @@ export function ArchiveList({ releases, showTitle = true }: ArchiveListProps) {
                 {release.title}
               </div>
               <div className="text-gray-500">
-                {formatDate(release.published_at)}
+                {formatDate(release.date_created)}
               </div>
             </Link>
           ))}

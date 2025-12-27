@@ -45,7 +45,7 @@ async function directusFetch<T>(
 
   const response = await fetch(url.toString(), {
     headers: {
-      Authorization: `Bearer ${DIRECTUS_TOKEN}`,
+      // Authorization: `Bearer ${DIRECTUS_TOKEN}`,
       'Content-Type': 'application/json',
     },
     // Current: no caching for development
@@ -87,10 +87,9 @@ export async function fetchLatestReleaseKey(): Promise<string | null> {
 /**
  * Parse raw Directus response into usable format
  */
-function parseAuthor(junction: { directus_users_id: { first_name: string; last_name: string; email: string } }): Contributor {
+function parseContributor(junction: { directus_users_id: { first_name: string; last_name: string; email: string } }): Contributor {
   const { first_name, last_name, email } = junction.directus_users_id;
-  const initials = `${first_name?.[0] || ''}${last_name?.[0] || ''}`.toUpperCase();
-  
+
   return {
     directus_users_id: {
       first_name: first_name || '',
@@ -111,7 +110,7 @@ function parseSection(section: ReleaseNote['sections'][number]): ParsedSection {
   }
 
   // Parse authors from junction table
-  const contributors = (section.contributors || []).map(parseAuthor);
+  const contributors = (section.contributors || []).map(parseContributor);
 
   return {
     ...section,
@@ -163,7 +162,7 @@ export async function fetchReleaseByKey(
       'highlights',
       'summary',
       'status',
-      // 'created_at',
+      'date_created',
       'sections.id',
       'sections.title',
       'sections.description',
