@@ -1,27 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles for Release Notes that are complex for Tailwind */
+/* ═══════════════════════════════════════════════════════════════════════════
+   AMBAK WEEKLY - GLASS EDITORIAL THEME
+   A warm, accessible design celebrating the makers behind the features
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 @layer base {
+  :root {
+    /* Brand Colors */
+    --color-primary: #6366f1;
+    --color-primary-light: #818cf8;
+    --color-accent: #f59e0b;
+    --color-accent-soft: #fbbf24;
+    
+    /* Warm Neutrals */
+    --color-warm-50: #fefdfb;
+    --color-warm-100: #faf8f5;
+    --color-warm-200: #f5f0e8;
+    --color-warm-300: #e8e0d5;
+    --color-warm-400: #d4c8b8;
+    --color-warm-500: #a89a85;
+    --color-warm-600: #857663;
+    --color-warm-700: #5c5044;
+    --color-warm-800: #3d352d;
+    --color-warm-900: #1f1b17;
+    
+    /* Glass Effect Values */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --glass-blur: 20px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background: linear-gradient(180deg, #FFE5E5 0%, #F5E6FF 15%, #FFFFFF 35%);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: 
+      radial-gradient(ellipse at 20% 0%, rgba(251, 191, 36, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 0%, rgba(129, 140, 248, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(251, 191, 36, 0.08) 0%, transparent 40%),
+      linear-gradient(180deg, #fefdfb 0%, #ffffff 100%);
     background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--color-warm-800);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Editorial Heading Font */
+  h1, h2, h3, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
   }
 }
 
 @layer components {
-  .author-avatar-gradient {
+  /* ═══════════════════════════════════════════════════════════════════════
+     GLASS CARD SYSTEM
+     ═══════════════════════════════════════════════════════════════════════ */
+  
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-card-elevated {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.02),
+      0 12px 40px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .glass-card-subtle {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     CONTRIBUTOR AVATARS
+     ═══════════════════════════════════════════════════════════════════════ */
+  
+  .avatar-gradient-1 {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .avatar-gradient-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+  
+  .avatar-gradient-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+  
+  .avatar-gradient-4 {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  }
+  
+  .avatar-gradient-5 {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  }
+  
+  .avatar-gradient-6 {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  }
+
+  /* Ring effect for featured contributors */
+  .avatar-ring {
+    box-shadow: 
+      0 0 0 3px rgba(255, 255, 255, 0.9),
+      0 0 0 5px rgba(99, 102, 241, 0.3);
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     SCOPE/PROJECT BADGES
+     ═══════════════════════════════════════════════════════════════════════ */
+  
+  .badge-finance {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  
+  .badge-yoddha {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, rgba(234, 88, 12, 0.15) 100%);
+    color: #ea580c;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+  }
+  
+  .badge-sangam {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
+    color: #2563eb;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+  
+  .badge-default {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(79, 70, 229, 0.15) 100%);
+    color: #4f46e5;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     FEATURE CARD HOVER EFFECTS
+     ═══════════════════════════════════════════════════════════════════════ */
+  
+  .feature-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 8px 16px rgba(0, 0, 0, 0.04),
+      0 24px 64px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     EDITORIAL ELEMENTS
+     ═══════════════════════════════════════════════════════════════════════ */
+  
+  .editorial-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(168, 154, 133, 0.3) 20%,
+      rgba(168, 154, 133, 0.3) 80%,
+      transparent 100%
+    );
+  }
+
+  .editorial-accent {
+    position: relative;
+  }
+
+  .editorial-accent::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    border-radius: 2px;
+  }
+
+  /* Decorative flourish */
+  .flourish {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-warm-400);
+  }
+
+  .flourish::before,
+  .flourish::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: currentColor;
   }
 }
 
-/* Navigation Animations */
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 @layer utilities {
-  /* Animate in utilities */
   .animate-in {
-    animation-duration: 200ms;
+    animation-duration: 300ms;
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     animation-fill-mode: forwards;
   }
@@ -31,42 +232,50 @@
   }
   
   .slide-in-from-top-2 {
-    --tw-translate-y: -0.5rem;
     animation-name: slideInFromTop;
   }
   
   .slide-in-from-bottom-4 {
-    --tw-translate-y: 1rem;
     animation-name: slideInFromBottom;
   }
-  
-  .duration-200 {
-    animation-duration: 200ms;
+
+  .slide-in-from-left {
+    animation-name: slideInFromLeft;
+  }
+
+  .scale-in {
+    animation-name: scaleIn;
   }
   
-  .duration-300 {
-    animation-duration: 300ms;
-  }
+  .duration-200 { animation-duration: 200ms; }
+  .duration-300 { animation-duration: 300ms; }
+  .duration-500 { animation-duration: 500ms; }
   
-  /* Safe area padding for iOS devices with home indicator */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
+
+  /* Stagger animation for lists */
+  .stagger-1 { animation-delay: 50ms; }
+  .stagger-2 { animation-delay: 100ms; }
+  .stagger-3 { animation-delay: 150ms; }
+  .stagger-4 { animation-delay: 200ms; }
+  .stagger-5 { animation-delay: 250ms; }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideInFromTop {
   from {
     opacity: 0;
-    transform: translateY(-0.5rem);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -77,7 +286,7 @@
 @keyframes slideInFromBottom {
   from {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -85,3 +294,61 @@
   }
 }
 
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RICH TEXT CONTENT STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.prose-content {
+  line-height: 1.7;
+}
+
+.prose-content p {
+  margin-bottom: 1em;
+}
+
+.prose-content ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.prose-content li {
+  margin-bottom: 0.5em;
+}
+
+.prose-content strong {
+  font-weight: 600;
+  color: var(--color-warm-900);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  :root {
+    --glass-blur: 12px;
+  }
+}

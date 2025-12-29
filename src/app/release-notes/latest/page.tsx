@@ -1,4 +1,4 @@
-import { redirect, notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { fetchLatestReleaseKey, fetchReleaseByKey, fetchArchive } from '@/lib/directus';
 import {
   Navigation,
@@ -32,7 +32,6 @@ export default async function LatestReleasePage({ searchParams }: PageProps) {
   }
 
   // Fetch the release data
-  console.log('fetching release by key', latestKey);
   const release = await fetchReleaseByKey(latestKey, scope);
   
   if (!release) {
@@ -46,12 +45,11 @@ export default async function LatestReleasePage({ searchParams }: PageProps) {
   const issueNumber = release.period_key.replace(/\D/g, '').slice(-3) || '001';
 
   return (
-    <main>
+    <main className="min-h-screen">
       <div className="max-w-[980px] mx-auto px-6">
         <Navigation 
           currentScope={scope || 'all'} 
           activePage="latest"
-          variant="glassmorphism"
         />
         
         <HeaderHero
@@ -74,4 +72,3 @@ export const metadata = {
   title: 'Latest Release - Ambak Weekly',
   description: 'The latest product updates and feature releases from Ambak',
 };
-

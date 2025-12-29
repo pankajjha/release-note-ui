@@ -37,11 +37,10 @@ export default async function ReleaseNotePage({ params, searchParams }: PageProp
   const archive = await fetchArchive();
 
   // Extract issue number from release_key (e.g., "2025-W52" -> "052")
-  // Adjust this logic based on your actual release_key format
   const issueNumber = release.period_key.replace(/\D/g, '').slice(-3) || '001';
 
   return (
-    <main>
+    <main className="min-h-screen">
       <div className="max-w-[980px] mx-auto px-6">
         <Navigation 
           currentScope={scope || 'all'} 
@@ -83,4 +82,3 @@ export async function generateMetadata({ params }: PageProps) {
     description: release.summary?.slice(0, 160),
   };
 }
-

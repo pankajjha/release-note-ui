@@ -9,28 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Georgia', 'Times New Roman', 'serif'],
-        sans: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'sans-serif',
-        ],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       colors: {
+        warm: {
+          50: '#fefdfb',
+          100: '#faf8f5',
+          200: '#f5f0e8',
+          300: '#e8e0d5',
+          400: '#d4c8b8',
+          500: '#a89a85',
+          600: '#857663',
+          700: '#5c5044',
+          800: '#3d352d',
+          900: '#1f1b17',
+        },
         primary: {
-          DEFAULT: '#1A1A1A',
-          light: '#2C2C2C',
-          muted: '#4A4A4A',
+          DEFAULT: '#6366f1',
+          light: '#818cf8',
+          dark: '#4f46e5',
         },
         accent: {
-          purple: '#6B4CE6',
-          'purple-light': '#E8E0FF',
+          DEFAULT: '#f59e0b',
+          light: '#fbbf24',
+          dark: '#d97706',
         },
       },
-      backgroundImage: {
-        'hero-gradient':
-          'linear-gradient(180deg, #FFE5E5 0%, #F5E6FF 15%, #FFFFFF 35%)',
+      borderRadius: {
+        '4xl': '2rem',
+      },
+      boxShadow: {
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.08)',
+        'glass-lg': '0 12px 48px rgba(0, 0, 0, 0.12)',
+        'warm': '0 4px 24px rgba(168, 154, 133, 0.15)',
       },
     },
   },
